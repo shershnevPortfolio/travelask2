@@ -37,7 +37,7 @@
   margin-bottom: 54px
 
   &::before
-    content: 'About us'
+    content: ''
     margin-bottom: 30px
     font-family: Montserrat
     font-size: 22px
@@ -45,6 +45,10 @@
     letter-spacing: 3.08px
     color: #c4c4c4
     display: block
+
+.about-section__article-title
+  &::before
+    content: 'Abous us'
 
 
 .about-section__inner
@@ -111,7 +115,8 @@ $galleryPhotosMargin: 30px
 .slider-toggle__slash
   margin: 0 10px
 
-
+.inner--reversed
+  flex-direction: row-reverse
 
 
 
