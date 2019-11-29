@@ -3,8 +3,6 @@
   flex-direction: column
   align-items: center
   justify-content: center
-
-.about-section
   padding: 65px 0px
 
 .section__article
@@ -54,6 +52,67 @@
   justify-content: space-between
   align-items: center
   flex-wrap: wrap
+
+.section__title
+  font-family: Montserrat
+  font-size: 32px
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+  letter-spacing: 7.2px
+  color: #000000
+
+  &::after
+    content: ''
+    display: block
+    font-family: Montserrat
+    font-size: 28px
+    font-weight: 500
+    letter-spacing: 4.2px
+    color: #5b5b5c
+    margin-top: 35px
+
+.photos-section__title
+  margin-bottom: 100px
+  &::after
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
+
+$galleryPhotosMargin: 30px
+.photos__container-row
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: $galleryPhotosMargin
+
+.photos__container-item
+  max-width: 800px
+
+.photos__container-item:not(:last-child)
+  margin-right: $galleryPhotosMargin
+
+.slider-toggle__inner
+  display: flex
+  align-items: center
+
+.slider-toggle__number-container
+  font-family: Montserrat
+  font-size: 30px
+  font-weight: 500
+  letter-spacing: 4.2px
+  color: #000000
+
+.slider-toggle__link
+  display: flex
+  align-items: center
+
+.slider-toggle__number--disabled
+  color: #c5c5c5 !important
+
+.slider-toggle__slash
+  margin: 0 10px
+
+
+
 
 
 
