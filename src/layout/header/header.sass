@@ -1,0 +1,63 @@
+.header
+  display: flex
+  padding-top: 15px
+  height: 100vh
+  flex-direction: column
+  align-items: center
+  // Dont forget to delete this!
+  background: url('header-bg.jpg') center no-repeat
+
+
+.header-navigation__inner
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+.header-navigation__link
+  color: #ffffff
+  font-family: 'OpenSans'
+  font-size: 20px
+  font-weight: 400
+  letter-spacing: 2.8px
+
+.header-navigation__item:not(:last-child)
+  margin-right: 100px
+
+.header__title
+  font-family: Montserrat
+  font-size: 100px
+  font-weight: 700
+  color: #ffffff
+  text-align: center
+  line-height: 80px
+
+  &::after
+    content: 'For entrepreneurs and freelancers'
+    display: block
+    margin-top: 20px
+    margin-bottom: 20px
+    text-align: center
+    font-family: Montserrat
+    font-size: 30px
+    line-height: 21px
+    font-weight: 400
+    letter-spacing: 4.2px
+    color: #ffffff
+
+.header__main
+  display: flex
+  height: 100%
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.header__main-link
+  padding: 20px 80px
+  border: 2px solid #ffffff
+  width: fit-content
+  font-family: Montserrat
+  font-size: 18px
+  font-weight: 400
+  text-transform: uppercase
+  letter-spacing: 2.52px
+  color: #ffffff
