@@ -7,10 +7,20 @@
   background: url('header-bg.jpg') center/cover no-repeat
 
 
+.header-navigation
+  @media screen and (max-width: 768px)
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    padding-right: 25px
+
 .header-navigation__inner
     display: flex
     flex-wrap: wrap
     justify-content: center
+
+    @media screen and (max-width: 768px)
+      display: none
 
 .header-navigation__link
   color: #ffffff
@@ -68,3 +78,18 @@
 .more-info-link--black
     border: 2px solid #000000
     color: #000000
+
+.burger
+  cursor: pointer
+  display: none
+
+  @media screen and (max-width: 768px)
+      display: block
+
+
+.burger__item
+  display: block
+  height: 3px
+  width: 25px
+  background: #ffffff
+  margin-bottom: 4px
