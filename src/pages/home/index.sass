@@ -6,6 +6,10 @@
   justify-content: center
   padding: 65px 0px
 
+  @media screen and ( max-width: 768px )
+    padding: 40px 0px
+
+
 .section__article
    max-width: 813px
    height: fit-content
@@ -13,11 +17,16 @@
 .section__article-text-container
   margin-bottom: 60px
 
+
+
 .section__article-img-container
   @media screen and (max-width: 1500px)
     width: 100%
     max-width: 813px
     margin-bottom: 50px
+
+@media screen and (max-width: 425px)
+    margin-bottom: 30px
 
 .section__article-img
    @media screen and (max-width: 1500px)
@@ -34,8 +43,16 @@
   font-weight: 400
   letter-spacing: 3.08px
 
+  @media screen and  (max-width: 425px)
+    font-size: 15px
+
   &:not(:last-child)
     margin-bottom: 54px
+
+    @media screen and  (max-width: 425px)
+       margin-bottom: 25px
+
+
 
 .section__article-title
   color: #000000
@@ -45,6 +62,9 @@
   text-transform: uppercase
   letter-spacing: 4.2px
   margin-bottom: 54px
+  @media screen and ( max-width: 425px)
+    font-size: 19px
+    margin-bottom: 30px
 
   &::before
     content: ''
@@ -94,25 +114,55 @@
       font-size: 20px
       margin-top: 25px
 
+    @media screen and (max-width: 425px)
+      font-size: 10px
+      margin-top: 15px
+
 .photos-section__title
   margin-bottom: 100px
   @media screen and (max-width: 768px)
     margin-bottom: 50px
+
+  @media screen and (max-width: 425px)
+    font-size: 19px
   &::after
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
 
+
 $galleryPhotosMargin: 30px
+
+
+
+
 .photos__container-row
   display: flex
   justify-content: space-between
   align-items: center
   margin-bottom: $galleryPhotosMargin
 
+  @media screen and (max-width: 768px)
+    margin-bottom: $galleryPhotosMargin - 15
+    flex-direction: column
+
 .photos__container-item
   max-width: 800px
+  @media screen and (max-width: 768px)
+   width: 100%
+
+
+
+
+
 
 .photos__container-item:not(:last-child)
   margin-right: $galleryPhotosMargin
+
+  @media screen and (max-width: 768px)
+   margin-right: 0px
+   margin-bottom: 15px
+
+
+
 
 .slider-toggle__inner
   display: flex
@@ -151,7 +201,6 @@ $galleryPhotosMargin: 30px
   @media screen and (max-width: 1500px)
     margin-bottom: 70px
 
-
 .travel-section__article-title
   font-family: Montserrat
   font-size: 19px
@@ -162,6 +211,9 @@ $galleryPhotosMargin: 30px
   &::before
     display: none
 
+  @media screen and (max-width: 425px)
+   font-size: 14px
+
 .travel-section__inner
   display: flex
   justify-content: space-between
@@ -170,7 +222,23 @@ $galleryPhotosMargin: 30px
   @media screen and (max-width: 1500px)
     justify-content: center
 
+.view-photo-button
+  padding: 23px 36px
+  font-family: Montserrat
+  font-size: 16px
+  font-weight: 400
+  line-height: 41px
+  text-transform: uppercase
+  letter-spacing: 3.2px
+  background-color: #dddcdc
+  color: #000000
+
+  @media screen and ( max-width: 425px)
+    padding: 12px 18px
 
 
 .travel-section__img
   margin-bottom: 70px
+
+  @media screen and (max-width: 425px)
+    margin-bottom: 30px

@@ -7,7 +7,7 @@ export default () => {
   $('.more-info-link').on('click', function(e) {
       e.preventDefault();
       let scrollHeight = $(this).parent().parent('.header').outerHeight();
-      $('html').animate({ scrollTop: scrollHeight } ,1000);
+      $('html').animate({ scrollTop: scrollHeight } ,1400);
       return false;
   });
 
@@ -15,7 +15,7 @@ export default () => {
   $('.view-photo-button').on('click', function(e) {
     e.preventDefault();
     let scrollHeight =  $('#photos-section').offset().top;
-    $('html').animate({ scrollTop: scrollHeight } ,1000);
+    $('html').animate({ scrollTop: scrollHeight } ,1400);
     return false;
   })
 
@@ -49,6 +49,7 @@ carousel.owlCarousel({
 
   function callback(event) {
     $('.slider-toggle__number--left').removeClass('slider-toggle__number--disabled');
+    $('.slider-toggle__number--right').removeClass('slider-toggle__number--disabled');
     let currentSlideNumber = event.item.index + 1;
     let outputString = currentSlideNumber >= 10?  currentSlideNumber : `0${currentSlideNumber}`;
     $('.slider-toggle__number--left').text(outputString);
