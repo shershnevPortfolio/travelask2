@@ -12,6 +12,15 @@
 .section__article-text-container
   margin-bottom: 60px
 
+.section__article-img-container
+  @media screen and (max-width: 1500px)
+    width: 100%
+    max-width: 813px
+    margin-bottom: 50px
+
+.section__article-img
+   @media screen and (max-width: 1500px)
+     width: 100%
 
 .section__inner
   display: flex
@@ -48,7 +57,7 @@
 
 .about-section__article-title
   &::before
-    content: 'Abous us'
+    content: 'About us'
 
 
 .about-section__inner
@@ -56,6 +65,10 @@
   justify-content: space-between
   align-items: center
   flex-wrap: wrap
+
+  @media screen and (max-width: 1500px)
+    justify-content: center
+    flex-direction: column-reverse
 
 .section__title
   font-family: Montserrat
@@ -76,8 +89,14 @@
     color: #5b5b5c
     margin-top: 35px
 
+    @media screen and (max-width: 768px)
+      font-size: 20px
+      margin-top: 25px
+
 .photos-section__title
   margin-bottom: 100px
+  @media screen and (max-width: 768px)
+    margin-bottom: 50px
   &::after
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
 
@@ -114,7 +133,7 @@ $galleryPhotosMargin: 30px
 .slider-toggle__link
   display: flex
   align-items: center
-
+А
 .slider-toggle__number--disabled
   color: #c5c5c5 !important
 
@@ -125,6 +144,12 @@ $galleryPhotosMargin: 30px
 .adventure-section__title
   &::before
     content: 'Next Tour'
+
+
+.travel-section__article
+  @media screen and (max-width: 1500px)
+    margin-bottom: 70px
+
 
 .travel-section__article-title
   font-family: Montserrat
@@ -140,6 +165,11 @@ $galleryPhotosMargin: 30px
   display: flex
   justify-content: space-between
   flex-wrap: wrap
+
+  @media screen and (max-width: 1500px)
+    justify-content: center
+
+
 
 .travel-section__img
   margin-bottom: 70px
