@@ -1,5 +1,7 @@
 import './index.sass';
 import './index.pug';
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel';
 
 export default () => {
   $('.more-info-link').on('click', function(e) {
@@ -16,5 +18,22 @@ export default () => {
     $('html').animate({ scrollTop: scrollHeight } ,1500);
 
   })
+
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+      0:{
+          items:1
+      }
+  }
+
+
+  })
+
+
+
+
 }
 

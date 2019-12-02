@@ -13,6 +13,7 @@ const postCssFlexBugsFixes = require('postcss-flexbugs-fixes');
 /**
  * Webpack plugins
  */
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
@@ -339,6 +340,8 @@ const config = {
   },
 
   plugins: [
+
+
     new ExtractCssChunks({
       filename: 'css/[name].css?[hash]',
       chunkFilename: 'css/[name].css?[hash]',
