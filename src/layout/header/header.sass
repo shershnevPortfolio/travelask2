@@ -7,6 +7,24 @@
   background: url('header-bg.jpg') center/cover no-repeat
 
 
+
+
+.navigation__inner
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+
+.navigation__link
+  color: #ffffff
+  font-family: 'OpenSans'
+  font-size: 20px
+  font-weight: 400
+  letter-spacing: 2.8px
+
+.navigation__item:not(:last-child)
+  margin-right: 100px
+
 .header-navigation
   @media screen and (max-width: 768px)
     width: 100%
@@ -15,22 +33,8 @@
     padding-right: 25px
 
 .header-navigation__inner
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
-
-    @media screen and (max-width: 768px)
-      display: none
-
-.header-navigation__link
-  color: #ffffff
-  font-family: 'OpenSans'
-  font-size: 20px
-  font-weight: 400
-  letter-spacing: 2.8px
-
-.header-navigation__item:not(:last-child)
-  margin-right: 100px
+  @media screen and (max-width: 768px)
+    display: none
 
 .header__title
   font-family: Montserrat
