@@ -24,6 +24,7 @@ carousel.owlCarousel({
     loop:false,
     margin:10,
     nav:false,
+    autoHeight : true,
     onChanged: callback,
     onInitialized: initialized,
     responsive:{
