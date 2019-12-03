@@ -9,7 +9,6 @@
   @media screen and ( max-width: 768px )
     padding: 40px 0px
 
-
 .section__article
    max-width: 813px
    height: fit-content
@@ -242,3 +241,102 @@ $galleryPhotosMargin: 30px
 
   @media screen and (max-width: 425px)
     margin-bottom: 30px
+
+
+.book-section
+  padding: 150px 0px
+  background-color: #f4f4f4
+
+
+.book-form
+  display: flex
+  padding: 0px 0px
+  justify-content: space-between
+
+  @media screen and ( max-width: 1500px )
+    flex-direction: column
+
+  @media screen and ( max-width: 425px )
+    align-items: flex-start
+
+
+
+
+.book-form__legend
+  color: #000000
+  font-family: Montserrat
+  font-size: 30px
+  font-weight: 500
+  line-height: 41px
+  text-transform: uppercase
+  letter-spacing: 4.2px
+
+  &::after
+    content: 'Mauris ultrices eros in cursus turpis'
+    display: block
+    line-height: 18px
+    color: #5b5b5c
+    font-family: Montserrat
+    font-size: 18px
+    font-weight: 400
+    letter-spacing: 2.52px
+
+    @media screen and ( max-width: 425px )
+      font-size: 9px
+
+
+  @media screen and ( max-width: 1500px )
+    margin-bottom: 20px
+
+  @media screen and ( max-width: 1200px )
+    text-align: center
+
+  @media screen and ( max-width: 425px )
+    font-size: 18px
+    text-align: left
+
+.book-form__input
+  width: 304px
+  height: 71px
+  border: 2px solid #7a7a7a
+  color: #3a4047
+  font-family: Montserrat
+  font-size: 22px
+  font-weight: 400
+  letter-spacing: 3.08px
+  padding-left: 30px
+
+
+.book-form__submit
+  width: 247px
+  background: #3a4047
+  border: 2px solid #7a7a7a
+  color: #ffffff
+  font-family: Montserrat
+  font-size: 22px
+  font-weight: 400
+  text-transform: uppercase
+  letter-spacing: 3.08px
+  padding-left: 0px
+
+  @media screen and ( max-width: 1200px )
+    width: 304px
+
+
+.inputs__inner
+  display: flex
+
+  @media screen and ( max-width: 1200px )
+    flex-direction: column
+    align-items: center
+
+.book-form__label
+  width: fit-content
+
+.book-form__label:not(:last-child)
+  margin-right: 60px
+
+  @media screen and ( max-width: 1200px )
+    margin-right: 0px
+    margin-bottom: 20px
+
