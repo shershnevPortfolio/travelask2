@@ -49,18 +49,25 @@ carousel.owlCarousel({
     }
 
   function callback(event) {
-    $('.slider-toggle__number--left').removeClass('slider-toggle__number--disabled');
-    $('.slider-toggle__number--right').removeClass('slider-toggle__number--disabled');
+    let carouselSection = $(this)[0].$element;
+    let currentSlideNumberElem  = carouselSection.parent('.section').find('.slider-toggle__number--left');
+    let numberOfSliderNumbersElem  = carouselSection.parent('.section').find('.slider-toggle__number--right');
+
+
+    currentSlideNumberElem.removeClass('slider-toggle__number--disabled');
+    numberOfSliderNumbersElem.removeClass('slider-toggle__number--disabled');
+
     let currentSlideNumber = event.item.index + 1;
     let outputString = currentSlideNumber >= 10?  currentSlideNumber : `0${currentSlideNumber}`;
-    $('.slider-toggle__number--left').text(outputString);
+    currentSlideNumberElem.text(outputString);
+
     if(+currentSlideNumber  == +event.item.count) {
-      $('.slider-toggle__number--right').addClass('slider-toggle__number--disabled');
-      $('.slider-toggle__number--left').removeClass('slider-toggle__number--disabled');
+      numberOfSliderNumbersElem.addClass('slider-toggle__number--disabled');
+      currentSlideNumberElem.removeClass('slider-toggle__number--disabled');
     }
     if(+currentSlideNumber <= 1) {
-      $('.slider-toggle__number--left').addClass('slider-toggle__number--disabled');
-      $('.slider-toggle__number--right').removeClass('slider-toggle__number--disabled');
+      currentSlideNumberElem.addClass('slider-toggle__number--disabled');
+      numberOfSliderNumbersElem.removeClass('slider-toggle__number--disabled');
     }
   }
 
