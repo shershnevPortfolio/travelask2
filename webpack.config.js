@@ -30,81 +30,85 @@ const SERVER_PORT = 3000;
 /**
  * Webpack config variables
  */
+/* PATH_BASE when building = '../' */
 const PATH_BASE = '/';
 const PATH_ASSET = IS_PRODUCTION ? PATH_BASE : `http://${SERVER_HOST}:${SERVER_PORT}${PATH_BASE}`;
 const PATH_SRC = path.resolve(__dirname, 'src');
 const PATH_BUILD = path.resolve(__dirname, 'build');
 const PATH_PUBLIC = path.resolve(__dirname, 'build');
 
-/**
- * Функция обработки файлов стилей
- *
- * @param {boolean} isLoadResources - флаг использования sass-resources-loader
- * @param {boolean} isSassSyntax - флаг использования синтаксиса sass
- * @returns {any[]}
- */
+/* Функция обработки файлов стилей *
+@param {boolean} isLoadResources - флаг использования sass-resources-loader
+@param {boolean} isSassSyntax - флаг использования синтаксиса sass
+@returns {any[]}
+*/
 const styleLoader = (isLoadResources = true, isSassSyntax = true) => {
-  const loaders = [
-    {
-      loader: ExtractCssChunks.loader,
-      options: {
-        // if you want HMR - we try to automatically inject hot
-        // reloading but if it's not working, add it to the config
-        hot: !IS_PRODUCTION,
-        // modules: true, // if you use cssModules, this can help.
-        // reloadAll: true, // when desperation kicks in - this is a brute force HMR flag
-      },
-    },
-    {
-      loader: 'css-loader',
-      options: {
-        sourceMap: true,
-      },
-    }, {
-      loader: 'postcss-loader',
-      options: {
-        sourceMap: true,
-        plugins: ((() => {
-          const plugins = [];
-          plugins.push(
-            postCssFlexBugsFixes(),
-            postCssPresetEnv(),
-            postCssUrl(),
-            postCssAutoprefixer(),
-          );
-          if (IS_PRODUCTION) {
-            plugins.push(
-              postCssCssNano(),
-            );
-          }
-          return plugins;
-        })()),
-      },
-    },
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true,
-        indentedSyntax: isSassSyntax,
-        includePaths: [
-          path.resolve(__dirname, 'node_modules/'),
-          PATH_SRC,
-        ],
-      },
-    },
-  ];
+const loaders = [
+ {
+   loader: ExtractCssChunks.loader,
+   options: {
 
-  if (isLoadResources) {
-    loaders.push({
-      loader: 'sass-resources-loader',
-      options: {
-        sourceMap: true,
-        resources: path.resolve(PATH_SRC, 'common', 'index.scss'),
-      },
-    });
-  }
+ // if you want HMR - we try to automatically inject hot
+ // reloading but if it's not working, add it to the config
+ hot: !IS_PRODUCTION,
+ // modules: true, // if you use cssModules, this can help.
+ // reloadAll: true, // when desperation kicks in - this is a brute force HMR flag
+   },
+ },
+ {
+   loader: 'css-loader',
+   options: {
 
-  return loaders;
+ sourceMap: true,
+   },
+ }, {
+   loader: 'postcss-loader',
+   options: {
+
+ sourceMap: true,
+ plugins: ((() => {
+   const plugins = [];
+   plugins.push(
+     postCssFlexBugsFixes(),
+     postCssPresetEnv(),
+     postCssUrl(),
+     postCssAutoprefixer(),
+   );
+   if (IS_PRODUCTION) {
+     // plugins.push(
+     //   postCssCssNano(),
+     // );
+   }
+   return plugins;
+ })()),
+   },
+ },
+ {
+   loader: 'sass-loader',
+   options: {
+
+ sourceMap: true,
+ indentedSyntax: isSassSyntax,
+ includePaths: [
+   path.resolve(__dirname, 'node_modules/'),
+   PATH_SRC,
+ ],
+   },
+ },
+];
+
+if (isLoadResources) {
+ loaders.push({
+   loader: 'sass-resources-loader',
+   options: {
+
+ sourceMap: true,
+ resources: path.resolve(PATH_SRC, 'common', 'index.scss'),
+   },
+ });
+}
+
+return loaders;
 };
 
 const config = {

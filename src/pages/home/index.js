@@ -6,7 +6,8 @@ import 'owl.carousel';
 export default () => {
   $('.more-info-link').on('click', function(e) {
       e.preventDefault();
-      let scrollHeight = $(this).parent().parent('.header').outerHeight();
+      let parentClass = $(this).hasClass('more-info-link--black')? '.section': '.header';
+      let scrollHeight = $(this).closest(parentClass).outerHeight() + $(document).scrollTop();
       $('html').animate({ scrollTop: scrollHeight } ,1400);
       return false;
   });
